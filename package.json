@@ -1,0 +1,54 @@
+{
+  "name": "express-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:client": "NODE_ENV=development webpack-dev-server --config webpack.config.dev.js --mode development",
+    "dev:server": "NODE_ENV=development nodemon server/server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn run dev:client\" \"yarn run dev:server\" ",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production webpack --display-modules --progress --profile --colors --config webpack.config.production.js --mode production"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.2",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "path": "^0.12.7",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "concurrently": "^3.5.1",
+    "css-loader": "^0.28.10",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.0.4",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.17.1",
+    "pre-commit": "^1.2.2",
+    "react-hot-loader": "^4.0.0",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.2",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
+  }
+}
