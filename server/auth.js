@@ -5,8 +5,8 @@ module.exports = function auth(db) {
   passport.use(
     new gitHubStrategy(
       {
-        clientID: "024bcc7068913fa79df9",
-        clientSecret: "c62ab79d8ba01160530fa61eb0a75623d9107734",
+        clientID: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
         callbackURL: "http://localhost:5000/user-info"
       },
       (accessToken, refreshToken, profile, cb) =>
