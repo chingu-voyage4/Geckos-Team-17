@@ -6,9 +6,12 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const expressSession = require('express-session');
 const { MongoClient } = require('mongodb');
+const dotenv = require('dotenv');
 
 const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 5000);
+// load .env variable to process.env
+dotenv.config();
 
 const app = express();
 
